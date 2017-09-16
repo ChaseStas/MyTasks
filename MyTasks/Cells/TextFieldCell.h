@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TextFieldCell.h
 //  MyTasks
 //
 //  Created by Stas Parechyn on 14.09.17.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface TextFieldCell : UITableViewCell
 
+@property (nonatomic, weak) IBOutlet UITextField *textField;
 
 @end
-

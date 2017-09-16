@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  MyTasks
+
+  Created by Stas Parechyn on 17.09.17.
+  Copyright © 2017 Stas Parechyn. All rights reserved.
+*/
+
+"taskPlaceholder" = "Введите вашу задачу";
+"hour" = "ч";
+"minute" = "м";
+
+"oops" = "Упс..";
+"entertitle" = "Пожалуйста, введите название задачи";
+
+"deadline" = "Дедлайн";
+"estimatedtime" = "Время на выполнение";
+"newtask" = "Новая задача";
+
+"tasks" = "Задачи";
+"finished" = "Завершенные";
+
+"noDataInstruction" = "  Нажмите кнопку + чтобы создать новую задачу  ";
+"changeProgressInstruction" = "Проведите пальцем вверх или низ чтобы изменить прогресс";

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB0704791F6B092100A95075 /* DateFieldTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0704781F6B092100A95075 /* DateFieldTextField.m */; };
+		AB07047F1F6B146300A95075 /* DateTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB07047E1F6B146300A95075 /* DateTextFieldCell.m */; };
+		AB0704831F6B2C4100A95075 /* NSDateTools.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0704821F6B2C4100A95075 /* NSDateTools.m */; };
+		AB0704871F6B2FBD00A95075 /* ChangeProgressController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0704861F6B2FBD00A95075 /* ChangeProgressController.m */; };
+		AB7891E71F6ABFA800010AC6 /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB7891E61F6ABFA800010AC6 /* TextFieldCell.m */; };
 		AB956E341F6AA9B100A8CB86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB956E331F6AA9B100A8CB86 /* AppDelegate.m */; };
 		AB956E371F6AA9B100A8CB86 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB956E361F6AA9B100A8CB86 /* ViewController.m */; };
 		AB956E3A1F6AA9B100A8CB86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB956E381F6AA9B100A8CB86 /* Main.storyboard */; };
@@ -14,9 +19,25 @@
 		AB956E3F1F6AA9B100A8CB86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB956E3E1F6AA9B100A8CB86 /* Assets.xcassets */; };
 		AB956E421F6AA9B100A8CB86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB956E401F6AA9B100A8CB86 /* LaunchScreen.storyboard */; };
 		AB956E451F6AA9B100A8CB86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB956E441F6AA9B100A8CB86 /* main.m */; };
+		ABB972D81F6C6F4000C4EAA7 /* TasksList+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB972D51F6C6F4000C4EAA7 /* TasksList+CoreDataClass.m */; };
+		ABB972E51F6D4E5500C4EAA7 /* TasksList+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB972E31F6D4E5400C4EAA7 /* TasksList+CoreDataProperties.m */; };
+		ABB972F91F6DC1F000C4EAA7 /* TaskCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ABB972F81F6DC1F000C4EAA7 /* TaskCell.m */; };
+		ABB972FE1F6DD72900C4EAA7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ABB973001F6DD72900C4EAA7 /* Localizable.strings */; };
+		ABDA29201F6AB10E00643984 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA291F1F6AB10E00643984 /* CoreDataManager.m */; };
+		ABDA29291F6ABAAA00643984 /* AddEditTaskVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ABDA29281F6ABAAA00643984 /* AddEditTaskVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB0704771F6B092100A95075 /* DateFieldTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateFieldTextField.h; sourceTree = "<group>"; };
+		AB0704781F6B092100A95075 /* DateFieldTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateFieldTextField.m; sourceTree = "<group>"; };
+		AB07047D1F6B146200A95075 /* DateTextFieldCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DateTextFieldCell.h; sourceTree = "<group>"; };
+		AB07047E1F6B146300A95075 /* DateTextFieldCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DateTextFieldCell.m; sourceTree = "<group>"; };
+		AB0704811F6B2C4100A95075 /* NSDateTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSDateTools.h; sourceTree = "<group>"; };
+		AB0704821F6B2C4100A95075 /* NSDateTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSDateTools.m; sourceTree = "<group>"; };
+		AB0704851F6B2FBD00A95075 /* ChangeProgressController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangeProgressController.h; sourceTree = "<group>"; };
+		AB0704861F6B2FBD00A95075 /* ChangeProgressController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangeProgressController.m; sourceTree = "<group>"; };
+		AB7891E51F6ABFA800010AC6 /* TextFieldCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextFieldCell.h; sourceTree = "<group>"; };
+		AB7891E61F6ABFA800010AC6 /* TextFieldCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextFieldCell.m; sourceTree = "<group>"; };
 		AB956E2F1F6AA9B100A8CB86 /* MyTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB956E321F6AA9B100A8CB86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AB956E331F6AA9B100A8CB86 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -28,6 +49,18 @@
 		AB956E411F6AA9B100A8CB86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB956E431F6AA9B100A8CB86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB956E441F6AA9B100A8CB86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		ABB972D41F6C6F4000C4EAA7 /* TasksList+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TasksList+CoreDataClass.h"; sourceTree = "<group>"; };
+		ABB972D51F6C6F4000C4EAA7 /* TasksList+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TasksList+CoreDataClass.m"; sourceTree = "<group>"; };
+		ABB972E21F6D4E5400C4EAA7 /* TasksList+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TasksList+CoreDataProperties.h"; sourceTree = "<group>"; };
+		ABB972E31F6D4E5400C4EAA7 /* TasksList+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "TasksList+CoreDataProperties.m"; sourceTree = "<group>"; };
+		ABB972F71F6DC1F000C4EAA7 /* TaskCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskCell.h; sourceTree = "<group>"; };
+		ABB972F81F6DC1F000C4EAA7 /* TaskCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskCell.m; sourceTree = "<group>"; };
+		ABB972FF1F6DD72900C4EAA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ABB973011F6DD73600C4EAA7 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ABDA291E1F6AB10E00643984 /* CoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		ABDA291F1F6AB10E00643984 /* CoreDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		ABDA29271F6ABAAA00643984 /* AddEditTaskVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddEditTaskVC.h; sourceTree = "<group>"; };
+		ABDA29281F6ABAAA00643984 /* AddEditTaskVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddEditTaskVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +74,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB0704731F6B085400A95075 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				ABB972F71F6DC1F000C4EAA7 /* TaskCell.h */,
+				ABB972F81F6DC1F000C4EAA7 /* TaskCell.m */,
+				AB7891E51F6ABFA800010AC6 /* TextFieldCell.h */,
+				AB7891E61F6ABFA800010AC6 /* TextFieldCell.m */,
+				AB07047D1F6B146200A95075 /* DateTextFieldCell.h */,
+				AB07047E1F6B146300A95075 /* DateTextFieldCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		AB0704801F6B245300A95075 /* TextFieldAddition */ = {
+			isa = PBXGroup;
+			children = (
+				AB0704771F6B092100A95075 /* DateFieldTextField.h */,
+				AB0704781F6B092100A95075 /* DateFieldTextField.m */,
+			);
+			path = TextFieldAddition;
+			sourceTree = "<group>";
+		};
+		AB0704841F6B2FA900A95075 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				AB0704811F6B2C4100A95075 /* NSDateTools.h */,
+				AB0704821F6B2C4100A95075 /* NSDateTools.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		AB956E261F6AA9B100A8CB86 = {
 			isa = PBXGroup;
 			children = (
@@ -62,16 +126,46 @@
 			children = (
 				AB956E321F6AA9B100A8CB86 /* AppDelegate.h */,
 				AB956E331F6AA9B100A8CB86 /* AppDelegate.m */,
-				AB956E351F6AA9B100A8CB86 /* ViewController.h */,
-				AB956E361F6AA9B100A8CB86 /* ViewController.m */,
+				ABB972D31F6C6C2200C4EAA7 /* Controllers */,
+				ABDA291D1F6AB09000643984 /* CoreData */,
+				AB0704731F6B085400A95075 /* Cells */,
+				AB0704801F6B245300A95075 /* TextFieldAddition */,
+				AB0704841F6B2FA900A95075 /* Tools */,
 				AB956E381F6AA9B100A8CB86 /* Main.storyboard */,
+				ABB973001F6DD72900C4EAA7 /* Localizable.strings */,
 				AB956E3E1F6AA9B100A8CB86 /* Assets.xcassets */,
 				AB956E401F6AA9B100A8CB86 /* LaunchScreen.storyboard */,
 				AB956E431F6AA9B100A8CB86 /* Info.plist */,
 				AB956E441F6AA9B100A8CB86 /* main.m */,
-				AB956E3B1F6AA9B100A8CB86 /* MyTasks.xcdatamodeld */,
 			);
 			path = MyTasks;
+			sourceTree = "<group>";
+		};
+		ABB972D31F6C6C2200C4EAA7 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AB956E351F6AA9B100A8CB86 /* ViewController.h */,
+				AB956E361F6AA9B100A8CB86 /* ViewController.m */,
+				ABDA29271F6ABAAA00643984 /* AddEditTaskVC.h */,
+				ABDA29281F6ABAAA00643984 /* AddEditTaskVC.m */,
+				AB0704851F6B2FBD00A95075 /* ChangeProgressController.h */,
+				AB0704861F6B2FBD00A95075 /* ChangeProgressController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		ABDA291D1F6AB09000643984 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				ABB972D41F6C6F4000C4EAA7 /* TasksList+CoreDataClass.h */,
+				ABB972D51F6C6F4000C4EAA7 /* TasksList+CoreDataClass.m */,
+				ABB972E21F6D4E5400C4EAA7 /* TasksList+CoreDataProperties.h */,
+				ABB972E31F6D4E5400C4EAA7 /* TasksList+CoreDataProperties.m */,
+				ABDA291E1F6AB10E00643984 /* CoreDataManager.h */,
+				ABDA291F1F6AB10E00643984 /* CoreDataManager.m */,
+				AB956E3B1F6AA9B100A8CB86 /* MyTasks.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,6 +210,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = AB956E261F6AA9B100A8CB86;
 			productRefGroup = AB956E301F6AA9B100A8CB86 /* Products */;
@@ -133,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB956E421F6AA9B100A8CB86 /* LaunchScreen.storyboard in Resources */,
+				ABB972FE1F6DD72900C4EAA7 /* Localizable.strings in Resources */,
 				AB956E3F1F6AA9B100A8CB86 /* Assets.xcassets in Resources */,
 				AB956E3A1F6AA9B100A8CB86 /* Main.storyboard in Resources */,
 			);
@@ -145,8 +241,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB0704791F6B092100A95075 /* DateFieldTextField.m in Sources */,
+				ABDA29201F6AB10E00643984 /* CoreDataManager.m in Sources */,
 				AB956E371F6AA9B100A8CB86 /* ViewController.m in Sources */,
 				AB956E3D1F6AA9B100A8CB86 /* MyTasks.xcdatamodeld in Sources */,
+				AB07047F1F6B146300A95075 /* DateTextFieldCell.m in Sources */,
+				ABB972E51F6D4E5500C4EAA7 /* TasksList+CoreDataProperties.m in Sources */,
+				ABDA29291F6ABAAA00643984 /* AddEditTaskVC.m in Sources */,
+				AB0704871F6B2FBD00A95075 /* ChangeProgressController.m in Sources */,
+				ABB972D81F6C6F4000C4EAA7 /* TasksList+CoreDataClass.m in Sources */,
+				AB0704831F6B2C4100A95075 /* NSDateTools.m in Sources */,
+				AB7891E71F6ABFA800010AC6 /* TextFieldCell.m in Sources */,
+				ABB972F91F6DC1F000C4EAA7 /* TaskCell.m in Sources */,
 				AB956E451F6AA9B100A8CB86 /* main.m in Sources */,
 				AB956E341F6AA9B100A8CB86 /* AppDelegate.m in Sources */,
 			);
@@ -171,6 +277,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		ABB973001F6DD72900C4EAA7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ABB972FF1F6DD72900C4EAA7 /* en */,
+				ABB973011F6DD73600C4EAA7 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -178,6 +293,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -222,7 +338,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -233,6 +349,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -271,7 +388,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -282,12 +399,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MyTasks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stasparechyn.MyTasks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -295,12 +415,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MyTasks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stasparechyn.MyTasks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
