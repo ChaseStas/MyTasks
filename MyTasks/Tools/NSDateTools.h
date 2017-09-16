@@ -9,9 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface NSDate (Tools)
-- (NSInteger )year;
-- (NSInteger )month;
-- (NSInteger )day;
 - (NSInteger )hours;
 - (NSInteger )minutes;
 

@@ -11,11 +11,11 @@
 @implementation NSDate (Tools)
 - (NSDateComponents *)dateComponents {
     static dispatch_once_t onceToken;
-    static NSCalendar *calendar;
+    static NSDateComponents *components;
     dispatch_once(&onceToken, ^{
-        calendar = [NSCalendar currentCalendar];
+        components = [[NSCalendar currentCalendar] components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:self];
     });
-    return [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:self];
+    return components;
 }
 
 - (NSDateFormatter *)dateFormatter {
@@ -25,18 +25,6 @@
         dateFormatter = [[NSDateFormatter alloc] init];
     });
     return dateFormatter;
-}
-
-- (NSInteger )year {
-    return [[self dateComponents] year];
-}
-
-- (NSInteger )month {
-    return [[self dateComponents] month];
-}
-
-- (NSInteger )day {
-    return [[self dateComponents] day];
 }
 
 - (NSInteger )hours {
