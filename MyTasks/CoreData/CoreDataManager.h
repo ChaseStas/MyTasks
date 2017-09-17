@@ -13,7 +13,7 @@
 
 - (void)save;
 - (void)deleteObject:(NSManagedObject *)object;
-- (NSManagedObjectContext *)context;
+@property (nonatomic, readonly, strong) NSManagedObjectContext *context;
 
 + (CoreDataManager *)shared;
 @end

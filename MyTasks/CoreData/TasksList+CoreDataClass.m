@@ -16,37 +16,37 @@
     [super awakeFromInsert];
     
     NSDate *date = [NSDate date];
-    [self setStartDate:date];
-    [self setDueDate:date];
-    [self setEstimatedTime:60];
-    [self setState:kTaskStateNotDefined];
-    [self setCompletionPercent:0];
+    self.startDate = date;
+    self.dueDate = date;
+    self.estimatedTime = 60;
+    self.state = kTaskStateNotDefined;
+    self.completionPercent = 0;
 }
 
 #pragma mark - Percent of completion
 - (void)setTaskCompletePercents:(int16_t)completionPercent {
     self.completionPercent = completionPercent;
     if (completionPercent == 100) {
-        [self setState:kTaskStateFinished];
+        self.state = kTaskStateFinished;
     }
     else {
-        [self setState:kTaskStateInProgress];
+        self.state = kTaskStateInProgress;
     }
 }
 
 #pragma mark - State
 
 - (TaskStatus)state {
-    return (TaskStatus)[self stateInt];
+    return (TaskStatus)self.stateInt;
 }
 - (void)setState:(TaskStatus)status {
-    [self setStateInt:(int64_t)status];
+    self.stateInt = (int64_t)status;
 }
 
 #pragma mark - Time Interval and Dates
 
 - (NSTimeInterval)estimatedTimeInterval {
-    return (NSTimeInterval)[self estimatedTime];
+    return (NSTimeInterval)self.estimatedTime;
 }
 
 - (NSDate *)estimatedTimeDate {

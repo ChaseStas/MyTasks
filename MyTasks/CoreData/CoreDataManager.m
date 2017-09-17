@@ -21,7 +21,7 @@
 }
 
 - (NSManagedObjectContext *)context {
-    return ((AppDelegate*)[[UIApplication sharedApplication] delegate]).managedObjectContext;
+    return ((AppDelegate*)[UIApplication sharedApplication].delegate).managedObjectContext;
 }
 
 - (void)save {

@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface NSDate (Tools)
-- (NSInteger )hours;
-- (NSInteger )minutes;
 
-- (NSString *)stringFormat;
+@property (nonatomic, readonly) NSInteger hours;
+@property (nonatomic, readonly) NSInteger minutes;
+@property (nonatomic, readonly, copy) NSString *stringFormat;
+
 @end

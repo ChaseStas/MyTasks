@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-#define RGB(r, g, b, a)  [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:(a)]
+#import "Utils.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -19,7 +19,7 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 - (void)saveContext;
-- (NSURL *)applicationDocumentsDirectory;
+@property (readonly, copy) NSURL *applicationDocumentsDirectory;
 
 @end
 

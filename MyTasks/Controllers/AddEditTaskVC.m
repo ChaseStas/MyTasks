@@ -58,6 +58,17 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         TextFieldCell *cell = [tableView dequeueReusableCellWithIdentifier:@"textFieldCell" forIndexPath:indexPath];
+        
+        if (IS_IPHONE_5 || IS_IPHONE_4_OR_LESS) {
+            cell.charactersLimit = 50;
+        }
+        else if (IS_IPHONE_6) {
+            cell.charactersLimit = 60;
+        }
+        else {
+            cell.charactersLimit = 75;
+        }
+        
         [cell.textField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
         
         if (firstResponderOnStart) {
@@ -80,7 +91,7 @@
         UIDatePicker *picker = cell.textField.datePicker;
         if (indexPath.section == 2) {
             picker.datePickerMode = UIDatePickerModeTime;
-            [picker setLocale:[NSLocale localeWithLocaleIdentifier:@"nl_NL"]]; //So DatePicker going to be in 24H mode on every device
+            picker.locale = [NSLocale localeWithLocaleIdentifier:@"nl_NL"]; //So DatePicker going to be in 24H mode on every device
             picker.date = self.myTask.estimatedTimeDate;
             cell.textField.text = self.myTask.stringFromEstimatedTimeInterval;
         }

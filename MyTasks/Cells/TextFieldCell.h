@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TextFieldCell : UITableViewCell
+@interface TextFieldCell : UITableViewCell <UITextFieldDelegate>
 
+@property NSInteger charactersLimit;
 @property (nonatomic, weak) IBOutlet UITextField *textField;
 
 @end

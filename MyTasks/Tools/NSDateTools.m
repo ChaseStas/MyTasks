@@ -28,11 +28,11 @@
 }
 
 - (NSInteger )hours {
-    return [[self dateComponents] hour];
+    return [self dateComponents].hour;
 }
 
 - (NSInteger )minutes {
-    return [[self dateComponents] minute];
+    return [self dateComponents].minute;
 }
 
 - (NSString *)stringFormat {

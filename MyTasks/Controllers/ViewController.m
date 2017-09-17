@@ -19,6 +19,7 @@
     float maxPoint;
     unsigned int startSuccessPercent;
     unsigned int successPercent;
+    float onePercentInPixels;
 }
 
 @property (nonatomic) TasksList *currentTask;
@@ -35,8 +36,8 @@
     self.changeProgressVC = [self.storyboard instantiateViewControllerWithIdentifier:@"changeProgressVC"];
     [self.tableView registerClass:[UITableViewHeaderFooterView class] forHeaderFooterViewReuseIdentifier:@"header"];
     self.tableView.tableFooterView = [UIView new];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
+//    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, 40, 0, 0);
     [self.segmentedControl setTitle:NSLocalizedString(@"tasks", nil) forSegmentAtIndex:0];
     [self.segmentedControl setTitle:NSLocalizedString(@"finished", nil) forSegmentAtIndex:1];
 }
@@ -50,6 +51,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Empty Data
 
 - (void)addEmptyBG {
     if (self.listArray.count == 0 && self.segmentedControl.selectedSegmentIndex != 1) {
@@ -65,6 +68,8 @@
         self.tableView.backgroundView = nil;
     }
 }
+
+#pragma mark - Array
 
 - (void)removeFromListArray:(NSIndexPath *)indexPath {
     [self.tableView beginUpdates];
@@ -89,17 +94,14 @@
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"dueDate" ascending:true];
     request.sortDescriptors = @[sortDescriptor];
     
-    if (self.segmentedControl.selectedSegmentIndex == 1) {
-        request.predicate = [NSPredicate predicateWithFormat:@"completionPercent == 100"];
-    }
-    else {
-        request.predicate = [NSPredicate predicateWithFormat:@"completionPercent < 100"];
-    }
+    //Filter for "Tasks" and "Finished" TableView
+    NSString *predicateString = (self.segmentedControl.selectedSegmentIndex == 1) ? @"completionPercent == 100" : @"completionPercent < 100";
+    request.predicate = [NSPredicate predicateWithFormat:predicateString];
     
     NSError *error = nil;
     NSArray *results = [context executeFetchRequest:request error:&error];
     if (!results) {
-        NSLog(@"Error fetching Tasks objects: %@\n%@", [error localizedDescription], [error userInfo]);
+        NSLog(@"Error fetching Tasks objects: %@\n%@", error.localizedDescription, error.userInfo);
         return;
     }
     
@@ -113,12 +115,12 @@
         }
     }
     
-    NSMutableArray *sortedArray = [NSMutableArray arrayWithCapacity:[sortedByDate count]];
+    NSMutableArray *sortedArray = [NSMutableArray arrayWithCapacity:sortedByDate.count];
     
     //Grouping tasks by date
-    while([sortedByDate count])
+    while(sortedByDate.count)
     {
-        TasksList *task = [sortedByDate objectAtIndex:0];
+        TasksList *task = sortedByDate[0];
         NSPredicate *itemNamePredicate = [NSPredicate predicateWithFormat:@"(dueDate.stringFormat == %@)",task.dueDate.stringFormat];
         
         NSArray *item= [sortedByDate filteredArrayUsingPredicate: itemNamePredicate];
@@ -143,9 +145,9 @@
     return self.listArray[section].count;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 50;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return 50;
+//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 30;
@@ -226,15 +228,16 @@
     if (gesture.state == UIGestureRecognizerStateBegan) {
         startPoint = location.y;
         
-        //Determine the distance to which edge of the screen is closer, lower or upper
+        //Determine the distance to which edge of the screen is closer, bottome or top
         //This is going to be maximum distance to swipe in every direction
-        short middleScreenY = [UIScreen mainScreen].bounds.size.height/2;
-        short screenEdgeY = 1;
-        if (startPoint > middleScreenY) {
-            //closer to down
-            screenEdgeY = [UIScreen mainScreen].bounds.size.height;
+        short screenHeight = [UIScreen mainScreen].bounds.size.height;
+        maxPoint = (startPoint > screenHeight/2) ? screenHeight : 1;
+        
+        onePercentInPixels = (maxPoint - startPoint);
+        onePercentInPixels /= (startSuccessPercent == 100) ? 100 : (100-startSuccessPercent);//checking for division by 0
+        if (onePercentInPixels < 0) {
+            onePercentInPixels *= (-1);
         }
-        maxPoint = screenEdgeY;
         
         UITableViewCell *cell = (UITableViewCell *)gesture.view;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
@@ -249,15 +252,7 @@
     }
     else if (gesture.state == UIGestureRecognizerStateChanged) {
         float distance = location.y - startPoint; //measure distance between startPoint and current position of our touch
-        if (distance == 0) {
-            return;
-        }
-        
-        float onePercentInPixels = (maxPoint - startPoint);
-        onePercentInPixels /= (startSuccessPercent == 100) ? 100 : (100-startSuccessPercent);//checking for division by 0
-        if (onePercentInPixels < 0) {
-            onePercentInPixels *= (-1);
-        }
+        if (distance == 0) { return; }
         
         float changes = distance/onePercentInPixels;//changes from start point
         if (changes < 0) {
@@ -266,7 +261,6 @@
         
         if (location.y < startPoint) {
             //if current position higher than start position, increase the value
-            //если текущая позиция выше первоначальной, прибавляем изменения
             successPercent = ((startSuccessPercent+changes) >= 100) ? 100 : startSuccessPercent+changes;
         }
         else {
@@ -280,8 +274,10 @@
              || gesture.state == UIGestureRecognizerStateCancelled) {
         
         [self.currentTask setTaskCompletePercents:successPercent];
+        
+        //Perform moving to another table(deleting from this)
         TaskCell *cell = (TaskCell *)gesture.view;
-        if (successPercent == 100) {
+        if (self.currentTask.state == kTaskStateFinished) {
             NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
             [self removeFromListArray:indexPath];
         }

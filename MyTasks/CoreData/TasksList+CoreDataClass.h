@@ -23,12 +23,12 @@ typedef enum {
 @interface TasksList : NSManagedObject
 @property TaskStatus state;
 
+@property (nonatomic, readonly, copy) NSDate * _Nonnull estimatedTimeDate;
+@property (nonatomic, readonly) NSTimeInterval estimatedTimeInterval;
+@property (nonatomic, readonly, copy) NSMutableString * _Nonnull stringFromEstimatedTimeInterval;
+
 - (TaskStatus)state;
 - (void)setState:(TaskStatus)status;
-
-- (NSDate *)estimatedTimeDate;
-- (NSTimeInterval)estimatedTimeInterval;
-- (NSMutableString *)stringFromEstimatedTimeInterval;
 
 - (void)setTaskCompletePercents:(int16_t)completionPercent;
 @end
